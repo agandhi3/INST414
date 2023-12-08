@@ -57,7 +57,7 @@ for query, tracks in top_tracks.items():
     print("\n")
     
     
-#Graphs
+# Graphs
 np.random.seed(0)
 distances = {
     'blindinglights': np.random.rand(100),
