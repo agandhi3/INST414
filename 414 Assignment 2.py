@@ -4,7 +4,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from operator import itemgetter
 
-# Step 1: Get Data from Data USA API
+# Get Data from Data USA API
 api_endpoint = "https://datausa.io/api/data?drilldowns=Nation&measures=Population"
 response = requests.get(api_endpoint)
 
@@ -26,7 +26,7 @@ sorted_years = sorted(years)
 for i in range(len(sorted_years) - 1):
     G.add_edge(sorted_years[i], sorted_years[i + 1])
 
-# Important  nodes are those with the highest degree centrality
+# Important nodes are those with the highest degree centrality
 degree_centrality = nx.degree_centrality(G)
 important_nodes = sorted(degree_centrality.items(), key=itemgetter(1), reverse=True)[:3]
 important_nodes = [node[0] for node in important_nodes]  
